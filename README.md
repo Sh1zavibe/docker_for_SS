@@ -1,1 +1,17 @@
-docker run -d -p 8000:8000 --name backend backend
+Создать папку и перекинуть файлы docker-compose.yaml
+Создать файл с названеим .env в той же папке, убедиться что созданный файл не имеет расширения (например txt)
+
+В файле .env написать три переменные и заполнить данные: 
+
+BOT_TOKEN = '0000000000:xxxxxxxxxxxxxxxxxxxxx'
+OWNER_USER_ID = 00000000
+STICKER_SET_NAME = 'xxxxxxxxxxxxxxxxxx'
+
+BOT_TOKEN - токен бота, который создал стикерпак, вы должны быть его владельцем
+OWNER_USER_ID -  id владельца бота
+STICKER_SET_NAME - название стикерпака (в конце названия стикерпака обязательно должно быть _by_{botname})
+
+Затем открываем командную строку переходим в нашу папку с файлами docker-compose.yaml и .env
+Затем пишем команду "docker compose up"
+
+После установки перейдите по адресу "http://localhost:3000/"
