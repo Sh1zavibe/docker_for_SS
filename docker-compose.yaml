@@ -9,5 +9,5 @@ services:
     depends_on: [backend]
 
   backend:
-    image: tap04ek/ss-backend   # ← вместо build
+    image: tap04ek/backend   # ← вместо build
     ports: ["8000:8000"]
