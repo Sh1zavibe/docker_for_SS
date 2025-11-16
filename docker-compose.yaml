@@ -1,13 +1,20 @@
-version: '3.8'
-
-services:
+services:  
   frontend:
-    image: tap04ek/ss-frontend  # ← вместо build
-    ports: ["3000:3000"]
+    image: tap04ek/frontend:latest
+    ports:
+      - "3000:3000"
     environment:
       - REACT_APP_API_URL=http://backend:8000
-    depends_on: [backend]
+    depends_on:
+      - backend
 
   backend:
-    image: tap04ek/backend   # ← вместо build
-    ports: ["8000:8000"]
+    image: tap04ek/backend:latest  
+    ports:
+      - "8000:8000"
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - OWNER_USER_ID=${OWNER_USER_ID}
+      - STICKER_SET_NAME=${STICKER_SET_NAME}
+    env_file:
+      - .env
